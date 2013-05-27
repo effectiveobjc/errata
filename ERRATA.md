@@ -26,3 +26,25 @@ switch (_currentState) {
 NSNumber *numberI = @1;
 NSLog(@"numberI retainCount = %lu", [number retainCount]);
 ```
+
+## Item 41
+
+[Page 211]: When using `dispatch_barrier_async`, one should be sure to use a custom concurrent queue, rather than a global one. Therefore the code should look like this:
+
+```objc
+_syncQueue = dispatch_queue_create("com.effectiveobjectivec.sync", DISPATCH_QUEUE_CONCURRENT);
+
+- (NSString*)someString {
+    __block NSString *localSomeString;
+    dispatch_sync(_syncQueue, ^{
+        localSomeString = _someString;
+    });
+    return localSomeString;
+}
+
+- (void)setSomeString:(NSString*)someString {
+    dispatch_barrier_async(_syncQueue, ^{
+        _someString = someString;
+    });
+}
+```
