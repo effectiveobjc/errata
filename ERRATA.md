@@ -17,3 +17,12 @@ switch (_currentState) {
         break;
 }
 ```
+
+## Item 36
+
+[Page 185]: The `numberI` variable should be sent `retainCount`. The code should read:
+
+```objc
+NSNumber *numberI = @1;
+NSLog(@"numberI retainCount = %lu", [number retainCount]);
+```
