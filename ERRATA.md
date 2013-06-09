@@ -18,6 +18,16 @@ switch (_currentState) {
 }
 ```
 
+## Item 8
+
+[Page 39]: There is a typo under 'Class-Specific Equality Methods'. The following is wrong:
+
+ > Objective-C has is no strong type checking at compile time...
+
+It should instead read:
+
+ > Objective-C has no strong type checking at compile time...
+
 ## Item 36
 
 [Page 185]: The `numberI` variable should be sent `retainCount`. The code should read:
