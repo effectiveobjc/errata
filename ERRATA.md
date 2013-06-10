@@ -18,6 +18,10 @@ switch (_currentState) {
 }
 ```
 
+## Item 7
+
+[Page 34]: The second bullet point in the paragraph about differences mentions that direct access to the ivar will retain the new value and release the old value. This is only true if under ARC, which of course, you should be using (Item 30). Without ARC, the old value will not be released and the new value will not be retain during the setting.
+
 ## Item 8
 
 [Page 39]: There is a typo under 'Class-Specific Equality Methods'. The following is wrong:
