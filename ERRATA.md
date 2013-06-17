@@ -41,6 +41,14 @@ NSNumber *numberI = @1;
 NSLog(@"numberI retainCount = %lu", [number retainCount]);
 ```
 
+## Item 39
+
+[Page 202]: There is a typo in the `typedef`. It should read:
+
+```objc
+typedef void(^EOCNetworkFetcherProgressHandler)(float progress);
+```
+
 ## Item 41
 
 [Page 211]: When using `dispatch_barrier_async`, one should be sure to use a custom concurrent queue, rather than a global one. Therefore the code should look like this:
