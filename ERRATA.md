@@ -32,6 +32,10 @@ It should instead read:
 
  > Objective-C has no strong type checking at compile time...
 
+## Item 34
+
+[Page 174]: There is a typo in the final paragraph. Instead of "autorelease po00ol" it should read "autorelease pool".
+
 ## Item 36
 
 [Page 185]: The `numberI` variable should be sent `retainCount`. The code should read:
