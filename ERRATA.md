@@ -22,6 +22,20 @@ switch (_currentState) {
 
 [Page 34]: The second bullet point in the paragraph about differences mentions that direct access to the ivar will retain the new value and release the old value. This is only true if under ARC, which of course, you should be using (Item 30). Without ARC, the old value will not be released and the new value will not be retain during the setting.
 
+[Page 35]: There is an issue with the setter `setLastName:` which would result in an infinite loop if run. Instead, it should be:
+
+```objc
+- (void)setLastName:(NSString*)lastName {
+	if (![lastName isEqualToString:@"Smith"]) {
+        [NSException raise:NSInvalidArgumentException
+                    format:@"Last name must be Smith"];
+	}
+    super.lastName = lastName;
+}
+```
+
+Note how it is calling `super`'s implementation of `setLastName:` through the property accessor.
+
 ## Item 8
 
 [Page 39]: There is a typo under 'Class-Specific Equality Methods'. The following is wrong:
