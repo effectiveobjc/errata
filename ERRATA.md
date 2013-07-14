@@ -61,6 +61,17 @@ NSNumber *numberI = @1;
 NSLog(@"numberI retainCount = %lu", [number retainCount]);
 ```
 
+## Item 37
+
+[Page 188]: Bad choice of words in the following:
+
+> This block defines a variable whose name is someBlock.
+
+It would be better if this read:
+
+> This code defines a variable whose name is someBlock.
+
+
 ## Item 39
 
 [Page 202]: There is a typo in the `typedef`. It should read:
