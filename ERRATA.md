@@ -2,6 +2,8 @@
 
 ## Item 5
 
+[Page 19]: Typo: `UIVewAutoresizing` should read `UIViewAutoresizing`.
+
 [Page 23]: The switch statement is missing `case` before each section. The code should read:
 
 ```objc
