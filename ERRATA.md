@@ -48,6 +48,32 @@ It should instead read:
 
  > Objective-C has no strong type checking at compile time...
 
+## Item 30
+
+[Page 158]: There is a typo in the code. The final two portions of code should read like this:
+
+```objc
+@interface EOCClass : NSObject {
+    id _object;
+}
+@end
+
+@implementation EOCClass
+- (void)setup {
+    _object = [EOCOtherClass new];
+}
+@end
+```
+
+```objc
+- (void)setup {
+    id tmp = [EOCOtherClass new];
+    [_object release];
+    _object = [tmp retain];
+    [tmp release];
+}
+```
+
 ## Item 34
 
 [Page 174]: There is a typo in the final paragraph. Instead of "autorelease po00ol" it should read "autorelease pool".
