@@ -48,6 +48,10 @@ It should instead read:
 
  > Objective-C has no strong type checking at compile time...
 
+## Item 12
+
+[Page 63]: Figure 2.4 should have a fifth box on the right, with `IMPe` written in it. Then the arrow should point from `capitalizedString` to `IMPe` box, leaving nothing pointing to `IMPc`. On the following page in the first paragraph, it states that the selector for `capitalizedString` has changed, hence this change to the figure.
+
 ## Item 30
 
 [Page 158]: There is a typo in the code. The final two portions of code should read like this:
